@@ -1,0 +1,9 @@
+<div class="row">
+  <% articles.each do |a| %>
+      <div class="col-md-4">
+        <h4><%= a.title %></h4>
+        <p><%= a.summary %></p>
+        <p><%= link_to raw(t('forum.buttons.view_details')), article_path(a), {class: 'btn btn-default'} %></p>
+      </div>
+  <% end %>
+</div>

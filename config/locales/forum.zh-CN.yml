@@ -1,7 +1,11 @@
 zh-CN:
   forum:
+    buttons:
+      learn_more: 查看更多 &raquo;
+      view_details: 详细信息 &raquo;
     index: 在线论坛
-    articles: 文章列表
+    latest_articles: 最近文章
+    hot_articles: 热门文章
     tags: 标签列表
     comments: 评论列表
     add_comment: 添加评论

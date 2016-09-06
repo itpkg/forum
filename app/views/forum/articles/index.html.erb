@@ -1,18 +1,11 @@
 <h3>
-  <%= @title = t 'forum.articles' %>
+  <%= @title = t 'forum.latest_articles' %>
   <% if current_user %>
       <%= link_to t('buttons.new'), new_article_path %>
   <% end %>
 </h3>
 <hr/>
-<div class="row">
-  <% @articles.each do |a| %>
-      <div class="col-md-4">
-        <h4><%= a.title %></h4>
-        <p><%= a.summary %></p>
-        <p><%= link_to t('buttons.view'), article_path(a), {class: 'btn btn-default'} %></p>
-      </div>
-  <% end %>
-</div>
+
+<%= render 'forum/shared/articles', articles:@articles%>
 
 <%= paginate @articles %>

@@ -1,0 +1,15 @@
+<% content_for :top do %>
+    <% if @article %>
+        <div class="jumbotron">
+          <div class="container">
+            <h1><%= @article.title%></h1>
+            <p><%= @article.summary%></p>
+            <p>
+              <%= link_to raw(t('forum.buttons.learn_more')), article_path(@article), {class: 'btn btn-primary btn-lg'} %>
+            </p>
+          </div>
+        </div>
+    <% end %>
+<% end %>
+
+<%= render 'forum/shared/articles', articles: @articles %>

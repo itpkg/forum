@@ -1,7 +1,11 @@
 en:
   forum:
+    buttons:
+      learn_more: Learn more &raquo;
+      view_details: View details &raquo;
     index: Forum
-    articles: Articles
+    latest_articles: Latest articles
+    hot_articles: Hot articles
     tags: Tags
     comments: Comments
     add_comment: Add comment
