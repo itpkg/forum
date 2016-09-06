@@ -1,5 +1,5 @@
 # Forum
-Short description and motivation.
+A forum engine for rails app
 
 ## Usage
 How to use my plugin.
@@ -8,21 +8,12 @@ How to use my plugin.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'forum'
+gem 'forum', github:'itpkg/forum'
 ```
 
 And then execute:
 ```bash
-$ bundle
+$ bundle install
 ```
 
-Or install it yourself as:
-```bash
-$ gem install forum
-```
 
-## Contributing
-Contribution directions go here.
-
-## License
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
