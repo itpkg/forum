@@ -1,0 +1,13 @@
+<h3>
+  <%= @title = t 'forum.tags' %>
+  <% if !current_user.nil? && current_user.is_admin? %>
+      <%= link_to t('buttons.new'), new_tag_path %>
+  <% end %>
+</h3>
+<hr/>
+
+<div class="row">
+  <% Forum::Tag.order(updated_at: :desc).each do |tag| %>
+      <%= link_to tag.name, tag_path(tag), {class: 'btn btn-default'} %>
+  <% end %>
+</div>

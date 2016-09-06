@@ -1,0 +1,8 @@
+<h3>
+  <%= @title=@tag.name %>
+  <% if !current_user.nil? && current_user.is_admin? %>
+      <%= link_to t('buttons.edit'), edit_tag_path(@tag) %>
+      <%= link_to t('buttons.remove'), tag_path(@tag), method: :delete, data: {confirm: t('home.are_you_sure')} %>
+  <% end %>
+</h3>
+<hr/>
