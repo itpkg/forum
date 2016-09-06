@@ -7,13 +7,19 @@
 </h3>
 <hr/>
 <p class="markdown"><%= @article.body %></p>
+<br/>
+<div class="row pull-right">
+  <%= render 'forum/shared/rate_box', resource:@article%>
+</div>
+<br/>
 <h4>
-  <% if current_user%>
-  <%= link_to t('forum.add_comment'), new_comment_path(article_id:@article.id)%>
-      <%end%>
+  <%= t 'forum.comments' %>
+  <% if current_user %>
+      <%= link_to t('buttons.new'), new_comment_path(article_id: @article.id) %>
+  <% end %>
 </h4>
 <hr/>
-<% @article.comments.order(updated_at: :desc).each do |c|%>
+<% @article.comments.order(updated_at: :desc).each do |c| %>
     <blockquote>
       <p class="markdown"><%= c.body %></p>
       <footer>
@@ -21,10 +27,9 @@
         <cite>
           <% if policy(@article).update? %>
               <%= link_to t('buttons.edit'), edit_comment_path(c) %>
-          <%= link_to t('buttons.remove'), comment_path(c), method: :delete, data: {confirm: t('home.are_you_sure')} %>
+              <%= link_to t('buttons.remove'), comment_path(c), method: :delete, data: {confirm: t('home.are_you_sure')} %>
           <% end %>
         </cite>
       </footer>
     </blockquote>
-
 <% end %>

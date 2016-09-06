@@ -24,14 +24,18 @@
         <li><%= link_to t('forum.tags'), tags_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        <% if current_user %>
+           <li><%= link_to t('forum.buttons.write_article'), new_article_path %></li>
+        <% end %>
         <%= render 'shared/sign_in_or_out' %>
       </ul>
     </div>
   </div>
 </nav>
-<%= yield :top%>
+<%= yield :top %>
 <div class="container">
   <%= render 'shared/flash_box' %>
+  <br/>
   <%= yield %>
   <%= render 'shared/footer' %>
 </div>

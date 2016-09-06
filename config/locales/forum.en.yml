@@ -3,9 +3,9 @@ en:
     buttons:
       learn_more: Learn more &raquo;
       view_details: View details &raquo;
+      write_article: Write article
     index: Forum
     latest_articles: Latest articles
     hot_articles: Hot articles
     tags: Tags
     comments: Comments
-    add_comment: Add comment

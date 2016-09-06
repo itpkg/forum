@@ -1,11 +1,8 @@
 <h3>
   <%= @title = t 'forum.latest_articles' %>
-  <% if current_user %>
-      <%= link_to t('buttons.new'), new_article_path %>
-  <% end %>
 </h3>
 <hr/>
 
-<%= render 'forum/shared/articles', articles:@articles%>
+<%= render 'forum/shared/articles', articles: @articles %>
 
 <%= paginate @articles %>
