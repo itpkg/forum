@@ -2,7 +2,7 @@ Forum::Engine.routes.draw do
 
   resources :articles
   resources :tags
-  resources :comments, except:[:show]
+  resources :comments, except:[:index, :show]
 
   root to: 'home#index'
 end

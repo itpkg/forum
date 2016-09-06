@@ -1,7 +1,7 @@
 module Forum
   class CommentPolicy < ApplicationPolicy
     def update?
-      !user.nil? && (comment.user.id == user.id || user.is_admin?)
+      !user.nil? && (record.user.id == user.id || user.is_admin?)
     end
 
     def create?
@@ -9,7 +9,7 @@ module Forum
     end
 
     def destroy?
-      !user.nil? && (comment.user.id == user.id || user.is_admin?)
+      !user.nil? && (record.user.id == user.id || user.is_admin?)
     end
   end
 end

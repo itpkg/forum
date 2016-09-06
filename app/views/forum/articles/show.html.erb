@@ -7,3 +7,24 @@
 </h3>
 <hr/>
 <p class="markdown"><%= @article.body %></p>
+<h4>
+  <% if current_user%>
+  <%= link_to t('forum.add_comment'), new_comment_path(article_id:@article.id)%>
+      <%end%>
+</h4>
+<hr/>
+<% @article.comments.order(updated_at: :desc).each do |c|%>
+    <blockquote>
+      <p class="markdown"><%= c.body %></p>
+      <footer>
+        <%= time_ago_in_words c.updated_at %>
+        <cite>
+          <% if policy(@article).update? %>
+              <%= link_to t('buttons.edit'), edit_comment_path(c) %>
+          <%= link_to t('buttons.remove'), comment_path(c), method: :delete, data: {confirm: t('home.are_you_sure')} %>
+          <% end %>
+        </cite>
+      </footer>
+    </blockquote>
+
+<% end %>
