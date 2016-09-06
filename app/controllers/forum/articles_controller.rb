@@ -9,7 +9,7 @@ module Forum
     end
 
     def create
-      @article = Article.new params.require(:article).permit(:title, :body)
+      @article = Article.new params.require(:article).permit(:title, :body, tag_ids: [])
       authorize @article
       @article.user = current_user
       if @article.save
@@ -32,7 +32,7 @@ module Forum
     def update
       @article = Article.find params[:id]
       authorize @article
-      if @article.update params.require(:article).permit(:title, :body)
+      if @article.update params.require(:article).permit(:title, :body, tag_ids: [])
         redirect_to article_path(@article)
       else
         render 'form'

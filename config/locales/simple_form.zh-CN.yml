@@ -1,8 +1,0 @@
-zh-CN:
-  simple_form:
-    labels:
-      tag:
-        name: '名称'
-      article:
-        title: 标题
-        body: 正文

@@ -1,0 +1,15 @@
+zh-CN:
+  activerecord:
+    models:
+      forum/tag: 标签
+      forum/article: 文章
+      forum/comment: 评论
+    attributes:
+      forum/tag:
+        name: 名称
+      forum/article:
+        title: 标题
+        body: 正文
+        tags: 标签
+      forum/comment:
+        body: 正文
