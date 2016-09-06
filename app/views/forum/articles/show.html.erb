@@ -6,6 +6,8 @@
   <% end %>
 </h3>
 <hr/>
+<%= render 'forum/shared/tags', tags:@article.tags%>
+<br/>
 <p class="markdown"><%= @article.body %></p>
 <br/>
 <div class="row pull-right">
