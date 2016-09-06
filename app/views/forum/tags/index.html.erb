@@ -5,9 +5,4 @@
   <% end %>
 </h3>
 <hr/>
-
-<div class="row">
-  <% Forum::Tag.order(updated_at: :desc).each do |tag| %>
-      <%= link_to tag.name, tag_path(tag), {class: 'btn btn-default'} %>
-  <% end %>
-</div>
+<%= render 'forum/shared/tags', tags:Forum::Tag.order(updated_at: :desc)%>
