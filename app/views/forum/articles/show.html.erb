@@ -1,0 +1,9 @@
+<h3>
+  <%= @title = @article.title %>
+  <% if policy(@article).update? %>
+      <%= link_to t('buttons.edit'), edit_article_path(@article) %>
+      <%= link_to t('buttons.remove'), article_path(@article), method: :delete, data: {confirm: t('home.are_you_sure')} %>
+  <% end %>
+</h3>
+<hr/>
+<p class="markdown"><%= @article.body %></p>

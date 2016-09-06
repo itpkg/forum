@@ -25,6 +25,7 @@ module Forum
 
     def edit
       @tag = Tag.find params[:id]
+      authorize @tag
       render 'form'
     end
 
