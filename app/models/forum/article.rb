@@ -1,5 +1,10 @@
+require 'elasticsearch/model'
+
 module Forum
   class Article < ApplicationRecord
+    include Elasticsearch::Model
+    include Elasticsearch::Model::Callbacks
+
     belongs_to :user
     has_many :comments, class_name: 'Forum::Comment'
     has_and_belongs_to_many :tags, class_name: 'Forum::Tag'
